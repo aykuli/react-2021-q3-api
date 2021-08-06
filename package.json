@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "build": "webpack --mode production --optimize-minimize",
-    "dev": "webpack-dev-server --mode development --open",
+    "dev": "webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,38 +14,41 @@
   },
   "author": "Aynur Shauerman",
   "license": "ISC",
-  "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "maintained node versions",
-    "not dead"
-  ],
   "bugs": {
     "url": "https://github.com/aykuli/react-2021-q3-api/issues"
   },
   "homepage": "https://github.com/aykuli/react-2021-q3-api#readme",
   "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
     "@types/react": "^17.0.16",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.1.8",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "*",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.2.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
-    "prettier": "^2.3.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0",
-    "webpack": "^5.48.0",
-    "webpack-dev-server": "^3.11.2"
-  },
-  "devDependencies": {
-    "babel-loader": "^8.2.2",
-    "css-loader": "^6.2.0",
     "eslint-loader": "^4.0.2",
+    "fork-ts-checker-webpack-plugin": "^6.3.1",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.2.0",
+    "prettier": "^2.3.2",
     "ts-loader": "^9.2.5",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }

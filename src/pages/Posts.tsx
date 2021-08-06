@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 interface Post {
@@ -7,7 +7,7 @@ interface Post {
   title: string;
 }
 
-export const Posts: FC<{}> = ({}) => {
+export const Posts: FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [posts, setPosts] = useState<Post[]>([]);
 
