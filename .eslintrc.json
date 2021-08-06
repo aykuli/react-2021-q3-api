@@ -1,0 +1,110 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "@typescript-eslint", "import", "react-hooks"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": "./tsconfig.json"
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true,
+    "mocha": true,
+    "jasmine": true,
+    "jquery": true,
+    "worker": true,
+    "serviceworker": true
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-console": "off",
+    "no-debugger": "off",
+    "no-restricted-globals": [
+      "error",
+      {
+        "name": "event",
+        "message": "Use local parameter instead."
+      },
+      {
+        "name": "fdescribe",
+        "message": "Do not commit fdescribe. Use describe instead."
+      }
+    ],
+    "no-useless-escape": [1],
+    "@typescript-eslint/camelcase": [0],
+    "@typescript-eslint/no-unused-vars": ["warn", { "args": "after-used" }],
+    "@typescript-eslint/indent": ["off"],
+    "no-multi-assign": [1],
+    "indent": ["off", 2, { "SwitchCase": 1 }],
+    "quotes": ["warn", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
+    "jsx-quotes": ["warn", "prefer-single"],
+    "comma-dangle": ["warn", "always-multiline"],
+    "max-len": ["off", 1, 120, 2, { "ignoreComments": true }],
+    "object-curly-spacing": ["warn", "always"],
+    "arrow-body-style": ["off"],
+    "no-confusing-arrow": ["off"],
+    "function-paren-newline": ["off"],
+    "arrow-parens": [1, "always"],
+    "object-curly-newline": [
+      "off",
+      {
+        "ObjectExpression": { "multiline": true, "minProperties": 1 },
+        "ObjectPattern": { "multiline": true, "minProperties": 5 },
+        "ImportDeclaration": { "multiline": true, "minProperties": 5 },
+        "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+      }
+    ],
+    "class-methods-use-this": [0],
+    "prefer-template": [2],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/prefer-default-export": ["off"],
+    "import/extensions": [1, "never"],
+    "import/no-dublicates": "off",
+    "react/jsx-filename-extension": ["off"],
+    "react/jsx-indent": [2, 2],
+    "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
+    "react/prop-types": [1, { "skipUndeclared": true }],
+    "react/jsx-one-expression-per-line": [0, { "allow": "single-child" }],
+    "react/destructuring-assignment": [0, "always", { "ignoreClassFields": false }],
+    "react/forbid-prop-types": [1, { "forbid": ["any"], "checkContextTypes": true, "checkChildContextTypes": true }],
+    "react/jsx-indent-props": [1, 2],
+    "react/no-multi-comp": [0, { "ignoreStateless": true }],
+    "react/no-array-index-key": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "jsx-a11y/interactive-supports-focus": [0],
+    "jsx-a11y/click-events-have-key-events": [0],
+    "jsx-a11y/label-has-for": [0],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "controlComponents": ["CustomCheckbox", "Toggle"],
+        "assert": "both",
+        "depth": 3
+      }
+    ],
+    "implicit-arrow-linebreak": ["off"],
+    "react/jsx-wrap-multilines": ["warn", { "declaration": false, "assignment": false }],
+    "operator-linebreak": ["off"],
+    "no-underscore-dangle": "off",
+    "no-case-declarations": "off"
+  },
+  "extends": ["airbnb", "plugin:@typescript-eslint/recommended"]
+}
