@@ -2,18 +2,19 @@ import React, { FC, Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Posts } from './pages/Posts';
 import { Dashboard } from './pages/Dashboard';
+import './assets/styles.css';
 
 const navData = [
   {
     Component: <Dashboard />,
     path: '/',
   },
-
   {
     Component: <Posts />,
     path: '/posts',
   },
 ];
+
 export const App: FC = () => {
   return (
     <div className='App'>

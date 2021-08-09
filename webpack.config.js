@@ -2,6 +2,7 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -22,6 +23,18 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {},
+          },
+          'css-loader',
+          // 'resolve-url-loader',
+        ],
+        exclude: /node_modules/,
+      },
+      {
         test: /\.tsx?$/,
         use: [{ loader: 'ts-loader' }, { loader: 'babel-loader' }],
         exclude: /node_modules/,
@@ -36,5 +49,13 @@ module.exports = {
       filename: './src/styles.css',
     }),
     new ForkTsCheckerWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/assets/',
+          to: './dist/assets',
+        },
+      ],
+    }),
   ],
 };
