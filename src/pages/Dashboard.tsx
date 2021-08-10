@@ -2,7 +2,7 @@ import { AxiosResponse } from 'axios';
 import React, { ChangeEvent, FC, useState } from 'react';
 import axios from '../services/api';
 
-const API_KEY = '6acc09f802644746b9fafbaeda30a3d6';
+const API_KEY = 'your key';
 interface GetData {
   data?: any;
 }
@@ -34,13 +34,7 @@ export const Dashboard: FC = () => {
     <div className='page-wrap'>
       <form className='search-gr' onSubmit={handleSubmit}>
         <label htmlFor='search'>
-          <input
-            id='search'
-            type='text'
-            value={searchValue}
-            onChange={handleChange}
-            className='input'
-          />
+          <input id='search' type='text' value={searchValue} onChange={handleChange} className='input' />
         </label>
         <button type='submit' disabled={isLoading}>
           {isLoading ? 'Loading...' : 'Search'}
